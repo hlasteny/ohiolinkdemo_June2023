@@ -1,4 +1,4 @@
-# Steal My Idea, ChatGPT API use case
+# Steal My Idea, ChatGPT API use case demo for OhioLink 
 
 This repository contains the code and materials for OhioLink's Steal My Idea presentation, held on June 6, 2023.
 
