@@ -12,6 +12,6 @@ Before running the demo on your computer, please ensure you have the following:
 
 - [XAMPP](https://www.apachefriends.org/) for local hosting
 - A code editor (such as Visual Studio Code, [https://code.visualstudio.com/](https://code.visualstudio.com/))
-- Access to the ChatGPT API (Please note that this is a paid service! For more information, check out [https://openai.com/pricing#language-models](https://openai.com/pricing#language-models))
+- Access to the ChatGPT API (Please note that this is a paid service! For more information, check out [https://openai.com/pricing#language-models](https://openai.com/pricing#language-models)). Please make sure to set max usage limit at https://platform.openai.com/account/billing/limits so you don't go over your budget!
 
 
