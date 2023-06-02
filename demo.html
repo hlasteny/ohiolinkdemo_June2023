@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Demo for OhioLink</title>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OhioLink Demo</h1>
+        <h2>Let's talk about your next project. Tell me what you are thinking.</h2>
+        <textarea
+            id="userInput"
+            rows="5"
+            placeholder="Add your comments here"
+        ></textarea>
+        <button id="chatButton" class="button">Let's chat</button>
+        <p id="completedSentence">Response: </p>
+    </div>
+
+    <script>
+        document.getElementById('chatButton').addEventListener('click', function() {
+            const inputField = document.getElementById('userInput');
+            const outputField = document.getElementById('completedSentence');
+            const inputText = inputField.value;
+
+            fetch('http://localhost/websites/chat.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userMessage: inputText }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                outputField.textContent = `Response: ${data.result}`;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                outputField.textContent = `Error: ${error}`;
+            });
+        });
+    </script>
+</body>
+</html>
